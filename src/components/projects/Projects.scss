@@ -1,0 +1,66 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20rem;
+  padding: 0 2rem;
+  @media (min-width: size.$md) {
+    padding: 0 7rem;
+  }
+
+  &__title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: color.$txtMed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: size.$md) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    &--number {
+      font-size: 1.8rem;
+      color: color.$txtHigh;
+      @media (min-width: size.$md) {
+        margin-right: 1rem;
+      }
+    }
+
+    &--line {
+      flex-grow: 1;
+      border-bottom: 1px solid color.$txtLow;
+      margin-left: 1rem;
+      align-self: center;
+    }
+  }
+
+  &__content {
+    padding: 5rem 0;
+  }
+
+  &__featured {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100%;
+
+    @media (min-width: size.$md) {
+      grid-template-columns: 50% 50%;
+    }
+
+    @media (min-width: size.$lg) {
+      grid-template-columns: 33% 33% 33%;
+    }
+  }
+}

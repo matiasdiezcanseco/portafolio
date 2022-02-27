@@ -1,0 +1,62 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.navmodal {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  flex-direction: column;
+  color: color.$txtHigh;
+
+  &__close {
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__button {
+    width: fit-content;
+    margin: 1.4rem 0;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    font-family: monospace;
+    font-size: 1rem;
+    border: none;
+    background-color: color.$bgLow;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+      margin-top: 0.4rem;
+      color: color.$txtLow;
+      text-decoration: none;
+      &:hover {
+        color: color.$txtHigh;
+      }
+    }
+
+    &--active {
+      color: color.$txtHigh;
+      border: 1px solid color.$txtHigh;
+      padding-right: 3rem;
+      padding-left: 3rem;
+      transition: background-color 300ms ease-in-out;
+      &:hover {
+        background-color: color.$btnHover;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use '../../constants/colors' as color;
+
+.modal {
+  padding: 1.4rem;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  border-radius: 0.5rem;
+  background-color: color.$bgLow;
+  display: flex;
+  flex-direction: column;
+  &__nav {
+    align-self: flex-end;
+    color: color.$txtLow;
+    cursor: pointer;
+    &:hover {
+      color: color.$txtMed;
+    }
+  }
+}

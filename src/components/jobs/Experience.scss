@@ -1,0 +1,54 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.experience {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  padding: 0 2rem;
+  @media (min-width: size.$md) {
+    padding: 0 7rem;
+  }
+
+  &__title {
+    padding: 0;
+    margin: 0;
+    font-size: 2.2rem;
+    color: color.$txtMed;
+    margin-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: size.$md) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    &--number {
+      font-size: 1.8rem;
+      color: color.$txtHigh;
+
+      @media (min-width: size.$md) {
+        margin-right: 1rem;
+      }
+    }
+    &--line {
+      flex-grow: 1;
+      border-bottom: 1px solid color.$txtLow;
+      margin-left: 1rem;
+      align-self: center;
+    }
+  }
+
+  &__content {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: size.$md) {
+      flex-direction: row;
+    }
+  }
+}

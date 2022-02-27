@@ -1,0 +1,85 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.navigation {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 90%;
+  margin: 0 auto;
+
+  &__container {
+    position: absolute;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__image {
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+  }
+
+  &__list {
+    list-style: none;
+    display: none;
+
+    @media (min-width: size.$md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__ham {
+    cursor: pointer;
+    color: color.$txtHigh;
+
+    @media (min-width: size.$md) {
+      display: none;
+    }
+  }
+
+  &__item {
+    margin: 0 1rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    @media (min-width: size.$lg) {
+      font-size: 0.9rem;
+    }
+
+    &--active {
+      border: 1px solid color.$txtHigh;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: color.$txtHigh;
+      transition: background-color 300ms ease-in-out;
+
+      &:hover {
+        background-color: color.$btnHover;
+      }
+    }
+  }
+
+  &__tag {
+    text-decoration: none;
+    color: color.$txtLow;
+
+    &--active {
+      color: color.$txtHigh;
+    }
+
+    &:hover {
+      color: color.$txtHigh;
+    }
+  }
+}
+
+.active {
+  backdrop-filter: blur(3px);
+  background-color: color.$bgOp;
+}

@@ -1,0 +1,125 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.projectbig {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    padding: 1rem 0;
+    width: 100%;
+    border-radius: 5px;
+
+    h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: color.$txtMed;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: color.$txtHigh;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__nav {
+    padding: 1rem;
+    display: flex;
+    border-radius: 5px;
+  }
+
+  &__icon {
+    cursor: pointer;
+    color: color.$txtHigh;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__image {
+    margin: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    background-size: contain;
+    width: 80vw;
+    height: 80vw * 0.57;
+
+    @media (min-width: size.$md) {
+      width: 70vw;
+      height: 70vw * 0.57;
+    }
+
+    @media (min-width: size.$lg) {
+      width: 700px;
+      height: 700px * 0.57;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @media (min-width: size.$lg) {
+      align-items: flex-start;
+    }
+  }
+
+  &__description {
+    background-color: color.$bgHigh;
+    padding: 1.2rem;
+    color: color.$txtLow;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    line-height: 1.3;
+
+    @media (min-width: size.$lg) {
+      top: 10%;
+      position: absolute;
+      width: 50%;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    color: color.$txtLow;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  &__item {
+    margin: 0 0.6rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    a {
+      color: color.$txtLow;
+      text-decoration: none;
+      &:hover {
+        color: color.$txtMed;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.marginr {
+  margin-right: 20px;
+}
