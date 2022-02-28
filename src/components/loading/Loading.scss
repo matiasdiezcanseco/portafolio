@@ -1,9 +1,9 @@
 @use '../../constants/colors' as color;
 
 .loading {
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: color.$bg;
+  height: 100vh;
 }

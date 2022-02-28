@@ -1,8 +1,9 @@
-import type { Project } from '../../state'
-import './ProjectModal.scss'
-import { MdOutlineCloseFullscreen } from 'react-icons/md'
 import ProjectBig from './ProjectBig'
+import { MdOutlineCloseFullscreen } from 'react-icons/md'
 import { motion } from 'framer-motion'
+import './ProjectModal.scss'
+import type { Project } from '../../state'
+
 interface ProjectModalType {
   project: Project
   close: () => void

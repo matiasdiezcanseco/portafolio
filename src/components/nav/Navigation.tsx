@@ -1,12 +1,12 @@
-import './Navigation.scss'
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import useScrollPosition from '@react-hook/window-scroll'
-import React from 'react'
+import CV from '../../assets/cv.pdf'
 import Logo from '../../assets/Logo'
-import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import Modal from 'react-modal'
 import NavigationModal from './NavigationModal'
+import useScrollPosition from '@react-hook/window-scroll'
+import { AnimatePresence, motion } from 'framer-motion'
+import { HiOutlineMenuAlt3 } from 'react-icons/hi'
+import { useEffect, useState } from 'react'
+import './Navigation.scss'
 
 const customStyles = {
   content: {
@@ -125,7 +125,7 @@ const Navigation: React.FC = () => {
                 </li>
                 <li
                   className="navigation__item navigation__item--active"
-                  onClick={() => window.open('public/cv.pdf')}
+                  onClick={() => window.open(CV)}
                 >
                   <a className="navigation__tag navigation__tag--active">CV</a>
                 </li>

@@ -1,6 +1,8 @@
-import './Footer.scss'
+import CV from '../../assets/cv.pdf'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { IoDocumentOutline } from 'react-icons/io5'
+import './Footer.scss'
+
 const Footer: React.FC = () => {
   return (
     <div className="footer">
@@ -28,7 +30,7 @@ const Footer: React.FC = () => {
           </a>
         </li>
         <li>
-          <a target="_blank" href="public/cv.pdf">
+          <a target="_blank" href={CV}>
             <IoDocumentOutline size={18} />
           </a>
         </li>

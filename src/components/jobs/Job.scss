@@ -10,9 +10,9 @@
   &__header {
     margin-bottom: 2rem;
     h1 {
-      color: color.$txtMed;
       margin: 0;
       margin-bottom: 0.3rem;
+      color: color.$txtMed;
       font-size: 1.3rem;
     }
 
@@ -23,10 +23,10 @@
   }
 
   &__company {
-    color: color.$txtHigh;
     transition: all 300ms ease-in-out;
-    text-decoration-color: transparent;
     cursor: pointer;
+    color: color.$txtHigh;
+    text-decoration-color: transparent;
 
     &:hover {
       text-decoration: underline;

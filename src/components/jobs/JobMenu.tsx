@@ -1,6 +1,6 @@
 import { Job } from '../../state'
 import './JobMenu.scss'
-import { useRef, useState } from 'react'
+
 interface JobMenuType {
   jobs: Job[]
   selectedId: string

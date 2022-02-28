@@ -1,9 +1,9 @@
 //@ts-nocheck
-import NET from 'vanta/dist/vanta.net.min'
-import { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
-import './Greet.scss'
 import * as THREE from 'three'
+import NET from 'vanta/dist/vanta.net.min'
+import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import './Greet.scss'
 
 const Greet: React.FC = () => {
   const [effect, setEffect] = useState()

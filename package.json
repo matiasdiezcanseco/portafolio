@@ -34,6 +34,8 @@
     "@types/react-modal": "^3.13.1",
     "@types/three": "^0.137.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "postcss": "^8.4.7",
+    "prettier-plugin-css-order": "^1.1.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }

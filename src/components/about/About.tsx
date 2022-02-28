@@ -1,11 +1,13 @@
-import './About.scss'
+import myPic from '../../assets/me.png'
 import useHover from '../../hooks/useHover'
-import { useRecoilValue } from 'recoil'
-import { techlonogiesState } from '../../state'
+import { find } from 'lodash'
 import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { techlonogiesState } from '../../state'
 import { useEffect, useState } from 'react'
-import _ from 'lodash'
+import { useInView } from 'react-intersection-observer'
+import { useRecoilValue } from 'recoil'
+import './About.scss'
+
 const About: React.FC = () => {
   const [hoverRef, isHovered] = useHover()
   const tech = useRecoilValue(techlonogiesState)
@@ -34,6 +36,7 @@ const About: React.FC = () => {
   return (
     <motion.div
       className="about"
+      id="about"
       transition={{ duration: 0.4 }}
       variants={variants}
       initial="hidden"
@@ -81,9 +84,9 @@ const About: React.FC = () => {
           </p>
           <div className="about__grid">
             {usedTech.map((t) => {
-              const tag = _.find(tech, { name: t })
+              const tag = find(tech, { name: t })
               return (
-                <li>
+                <li key={t}>
                   <a href={tag?.url} target="_blank">
                     {t}
                   </a>
@@ -94,7 +97,7 @@ const About: React.FC = () => {
         </div>
         <div
           className="about__image"
-          style={{ backgroundImage: `url(src/assets/me.png)` }}
+          style={{ backgroundImage: `url(${myPic})` }}
         >
           <div
             ref={hoverRef}

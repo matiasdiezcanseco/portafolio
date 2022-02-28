@@ -1,7 +1,7 @@
-import type { Job } from '../../state'
 import dayjs from 'dayjs'
-import './Job.scss'
 import { motion } from 'framer-motion'
+import './Job.scss'
+import type { Job } from '../../state'
 
 interface JobType {
   job: Job

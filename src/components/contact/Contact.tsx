@@ -1,7 +1,8 @@
-import './Contact.scss'
 import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import { useEffect, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
+import './Contact.scss'
+
 const Contact: React.FC = () => {
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -30,9 +31,13 @@ const Contact: React.FC = () => {
       animate={controls}
       transition={{ duration: 0.4 }}
     >
-      <h1 className="contact__title">
-        <span className="contact__title--number">04.</span> Contáctame
-      </h1>
+      <div className="contact__header">
+        <div className="contact__line"></div>
+        <h1 className="contact__title">
+          <span className="contact__title--number">04.</span> Contáctame
+        </h1>
+        <div className="contact__line"></div>
+      </div>
       <div className="contact__content">
         <p className="contact__desc">
           En estos momentos estoy disponible a nuevas oportunidades. Incluso si

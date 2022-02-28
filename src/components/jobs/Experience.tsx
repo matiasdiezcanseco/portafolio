@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useRecoilValue } from 'recoil'
-import { jobsState } from '../../state'
-import './Experience.scss'
 import JobComponent from './Job'
 import JobMenu from './JobMenu'
+import { jobsState } from '../../state'
 import { motion, useAnimation } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { useRecoilValue } from 'recoil'
+import './Experience.scss'
 
 const Experience: React.FC = () => {
   const jobs = useRecoilValue(jobsState)

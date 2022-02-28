@@ -1,18 +1,17 @@
-import './Projects.scss'
-import { useRecoilValue } from 'recoil'
-import { projectsState } from '../../state'
-import _ from 'lodash'
 import Project from './ProjectSmall'
-import { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 import ProjectBig from './ProjectBig'
+import { filter } from 'lodash'
+import { Fragment, useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import { projectsState } from '../../state'
+import { useInView } from 'react-intersection-observer'
+import { useRecoilValue } from 'recoil'
+import './Projects.scss'
 
 const Projects: React.FC = () => {
   const projects = useRecoilValue(projectsState)
-  const featuredProjects = _.filter(projects, { featured: true })
-  const nonFeaturedProjects = _.filter(projects, { featured: false })
-
+  const featuredProjects = filter(projects, { featured: true })
+  const nonFeaturedProjects = filter(projects, { featured: false })
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -42,13 +41,23 @@ const Projects: React.FC = () => {
       <div className="projects__content">
         <div className="projects__featured">
           {featuredProjects.map((p, i) => (
-            <ProjectBig
-              key={p.name}
-              project={p}
-              dir={i % 2 === 0 ? 'left' : 'right'}
-            />
+            <Fragment key={p.name}>
+              <ProjectBig project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
+              <br />
+              <br />
+            </Fragment>
           ))}
         </div>
+        <div className="projects__subtitle">
+          <h2>Otros Proyectos</h2>
+          <h3
+            className="projects__subtitle"
+            onClick={() => window.open('https://github.com')}
+          >
+            Visita el repositorio
+          </h3>
+        </div>
+
         <div className="projects__list">
           {nonFeaturedProjects.map((p) => (
             <Project key={p.name} project={p} />

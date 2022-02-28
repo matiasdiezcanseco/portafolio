@@ -1,10 +1,10 @@
 @use './constants/colors' as color;
 
 .app {
-  background-color: color.$bg;
-  font-family: monospace;
-  color: color.$txtLow;
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
+  background-color: color.$bg;
+  color: color.$txtLow;
+  font-family: monospace;
 }

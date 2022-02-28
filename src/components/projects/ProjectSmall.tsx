@@ -1,14 +1,15 @@
-import type { Project } from '../../state'
-import { FiFolder, FiGithub } from 'react-icons/fi'
-import { BsBoxArrowUpRight } from 'react-icons/bs'
-import './ProjectSmall.scss'
-import { motion } from 'framer-motion'
-import { useRecoilValue } from 'recoil'
-import { techlonogiesState } from '../../state'
 import _, { transform } from 'lodash'
-import ProjectModal from './ProjectModal'
 import Modal from 'react-modal'
+import ProjectModal from './ProjectModal'
+import { BsBoxArrowUpRight } from 'react-icons/bs'
+import { FiFolder, FiGithub } from 'react-icons/fi'
+import { motion } from 'framer-motion'
+import { techlonogiesState } from '../../state'
+import { useRecoilValue } from 'recoil'
 import { useState } from 'react'
+import './ProjectSmall.scss'
+
+import type { Project } from '../../state'
 
 Modal.setAppElement('#modal')
 
@@ -30,6 +31,8 @@ const customStyles = {
     padding: 0,
     overflow: 'visible',
     backgroundColor: '#26282c',
+    width: '90%',
+    maxWidth: '800px',
   },
   overlay: {
     backgroundColor: 'rgba(30,30,30,0.7)',
@@ -64,7 +67,7 @@ const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
       <motion.div
         className="projectsmall"
         whileHover="hover"
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.3 }}
         variants={variants}
         onClick={openModal}
       >

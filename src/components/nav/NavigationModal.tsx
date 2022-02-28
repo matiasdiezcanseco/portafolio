@@ -1,6 +1,7 @@
+import CV from '../../assets/cv.pdf'
 import { MdClose } from 'react-icons/md'
-import './NavigationModal.scss'
 import { motion } from 'framer-motion'
+import './NavigationModal.scss'
 
 interface NavigationModalType {
   close: () => void
@@ -55,7 +56,7 @@ const NavigationModal: React.FC<NavigationModalType> = ({ close }) => {
         </li>
         <li
           className="navmodal__button navmodal__button--active"
-          onClick={() => window.open('public/cv.pdf')}
+          onClick={() => window.open(CV)}
         >
           CV
         </li>
