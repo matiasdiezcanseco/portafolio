@@ -1,3 +1,5 @@
+@use './constants/colors.scss' as color;
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,4 +25,21 @@ code {
 
 .ReactModal__Overlay--before-close {
   opacity: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: color.$bg;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: color.$bgLoww;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
