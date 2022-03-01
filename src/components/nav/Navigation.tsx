@@ -54,7 +54,7 @@ const Navigation: React.FC = () => {
     e.preventDefault()
     document
       .getElementById(tag)
-      ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (

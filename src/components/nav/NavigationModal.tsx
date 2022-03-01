@@ -12,7 +12,7 @@ const NavigationModal: React.FC<NavigationModalType> = ({ close }) => {
     e.preventDefault()
     document
       .getElementById(tag)
-      ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     close()
   }
 
